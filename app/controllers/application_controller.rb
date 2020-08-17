@@ -1,10 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  before_action :configure_permitted_parameters, if :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   layout :layout_by_resource
-
-
 
   private
 
@@ -12,9 +10,7 @@ class ApplicationController < ActionController::Base
     "authentication" if devise_controller?
   end
 
-
   def configure_permitted_parameters
-  devise_parameter_sanizer.permite :sign_up, keys: %i[name username]
-    # code
+     devise_parameter_sanitizer.permit :sign_up, keys: %i[name username]
   end
 end
