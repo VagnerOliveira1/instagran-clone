@@ -1,9 +1,9 @@
 <main class="posts-page container">
   <section class="posts">
     <% if @posts.any? %>
-      <%= render @posts %>
+    <%= render @posts %>
     <% else %>
-      Nenhum Post.
+    Nenhum Post.
     <% end %>
   </section>
 
@@ -11,6 +11,7 @@
     sidebar
     <section class="seggestions">
       <h4>Sugestões Para Você</h4>
+      <%= render @suggested_users %>
     </section>
   </aside>
 

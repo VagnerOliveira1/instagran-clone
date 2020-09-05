@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
+  include SuggestedUsers
   before_action :set_post, only: [:show]
+  before_action :set_suggested_users, only: %i[index]
 
   def index
     flash.now[:error]='Teste'
@@ -14,11 +16,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params.merge(created_by: current_user))
     if @post.save
-      format.html { redirect_to @post, notice: 'Post criado com sucesso.' }
+      redirect_to @post, notice: 'Post criado com sucesso.' 
     else
-      format.html { render :new }
+      render :new 
     end
   end
 
