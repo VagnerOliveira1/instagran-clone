@@ -9,7 +9,9 @@ require("channels")
 
 
 import "../src/application.css";
-import "./flashMessages"
+import "./flashMessages";
+import "./modal";
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
