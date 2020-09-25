@@ -31,7 +31,7 @@
 
 pt-BR:
   activerecord:
-    model:
+    models:
       user: 'Usuário'
     attributes:
       default: &default
@@ -47,3 +47,8 @@ pt-BR:
       email: 'Email'
       password: 'Senha'
       password_confirmation: 'Senha (confirmação)'
+  errors:
+    messages:
+      #Active Storage Validations
+      content_type_invalid: 'É um tipo de arquivo inválido'
+      file_size_out_of_range: 'tem %{file_size}...o limite é 5 MB'
