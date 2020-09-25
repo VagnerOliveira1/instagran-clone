@@ -5,11 +5,11 @@ module ApplicationHelper
 
   def user_avatar(user)
     if user.avatar.attached?
-      avatar = user.avatar.variant(combine_options: {resize: '100x100^', extent:'100x100'})
+      avatar = user.avatar #variant(combine_options: {resize: '100x100^', extent:'100x100'})
     else
       avatar = "default-avatar.jpg"
     end
-    image_tag avatar, class: "photo"
+    image_tag avatar, size: '50x50', class: "photo"
   end
 end
 
