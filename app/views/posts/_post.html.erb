@@ -20,7 +20,7 @@
         <%= render  "likes/like", post: post %>
 
         <div class="action">
-          <% link_to post do %>
+          <%= link_to post do %>
             <%= embedded_svg "comment.svg" %>
           <% end %>
         </div>
