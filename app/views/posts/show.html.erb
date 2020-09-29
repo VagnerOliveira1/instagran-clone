@@ -11,19 +11,16 @@
        Nenhum comentário até o momento
       <% end %>
 
-      <%= form_with model: @commnent, local: true, class:"new-comment" do |form| %>
-        <%= form.hidden_field :post_id, value: @post.id %>
+      <%= form_with model: @comment, local: true, class:"new-comment" do |form| %>
+          <%= form.hidden_field :post_id, value: @post.id %>
+
           <div class="field">
-            <%= form.text_area :body, placeholder: "Comentário", required: true %>
+            <%= form.rich_text_area :body, placeholder: "Comentário", required: true %>
           </div>
           <div class="actions">
-            <%= form.submit " enviar comentário"%>
+            <%= form.submit " Enviar comentário"%>
           </div>
       <% end %>
     </section>
   </aside>
-
-
-
-
 </main>
